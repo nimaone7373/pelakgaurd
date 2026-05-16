@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PelakGuard — هوش مصنوعی تشخیص پلاک</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+
+<div class="mesh"></div>
+
+<!-- ── NAVBAR ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+      </div>
+      <span class="logo-name">PelakGuard</span>
+      <span class="logo-badge">AI</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#how" data-fa="نحوه کار" data-en="How It Works">نحوه کار</a>
+      <a href="#features" data-fa="ویژگی‌ها" data-en="Features">ویژگی‌ها</a>
+      <a href="#usecases" data-fa="کاربردها" data-en="Use Cases">کاربردها</a>
+      <a href="#faq" data-fa="سوالات" data-en="FAQ">سوالات</a>
+    </div>
+
+    <div class="nav-actions">
+      <button class="btn-ghost" onclick="toggleLang()" id="langBtn">EN</button>
+      <button class="btn-icon" onclick="toggleTheme()" id="themeBtn" title="تغییر تم">
+        <svg id="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg id="moon-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+      <a href="#cta" class="btn-primary" data-fa="شروع رایگان" data-en="Get Started">شروع رایگان</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="container" style="display:flex;flex-direction:column;align-items:center;">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      <span data-fa="هوش مصنوعی تشخیص و ماسک پلاک خودرو" data-en="AI-Powered License Plate Detection & Masking">هوش مصنوعی تشخیص و ماسک پلاک خودرو</span>
+    </div>
+
+    <h1>
+      <span data-fa="حریم خصوصی" data-en="Privacy,">حریم خصوصی</span><br>
+      <span class="grad-text" data-fa="از پلاک تا ماسک" data-en="Plate to Pixel.">از پلاک تا ماسک</span>
+    </h1>
+
+    <p data-fa="با دقت ۹۸٪ در زیر یک ثانیه — پلاک خودروها را شناسایی و ماسک کنید. بهینه‌شده برای پلاک‌های ایرانی. آنلاین یا کاملاً آفلاین." data-en="98% accuracy in under one second. Detect and anonymize license plates, optimized for Iranian plates. Online or fully offline.">
+      با دقت ۹۸٪ در زیر یک ثانیه — پلاک خودروها را شناسایی و ماسک کنید. بهینه‌شده برای پلاک‌های ایرانی. آنلاین یا کاملاً آفلاین.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#cta" class="btn-primary-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        <span data-fa="شروع رایگان" data-en="Start Free">شروع رایگان</span>
+      </a>
+      <a href="#how" class="btn-secondary">
+        <span data-fa="نحوه کار را ببینید" data-en="See How It Works">نحوه کار را ببینید</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+      </a>
+    </div>
+
+    <div class="stats-strip">
+      <div class="stat">
+        <div class="stat-num blue-txt">۹۸٪</div>
+        <div class="stat-label" data-fa="دقت تشخیص" data-en="Accuracy">دقت تشخیص</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-num purple-txt">&lt;۱s</div>
+        <div class="stat-label" data-fa="سرعت پردازش" data-en="Per Image">سرعت پردازش</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-num cyan-txt">8+</div>
+        <div class="stat-label" data-fa="موتور AI" data-en="AI Engines">موتور AI</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <div class="stat-num green-txt">100%</div>
+        <div class="stat-label" data-fa="آفلاین‌پذیر" data-en="Offline Ready">آفلاین‌پذیر</div>
+      </div>
+    </div>
+
+    <!-- Mockup -->
+    <div class="hero-mockup" style="width:100%;max-width:760px;">
+      <div class="mockup-glow"></div>
+      <div class="mockup-window">
+        <div class="mockup-bar">
+          <div class="mockup-dots">
+            <div class="mockup-dot" style="background:#ff5f57"></div>
+            <div class="mockup-dot" style="background:#ffbd2e"></div>
+            <div class="mockup-dot" style="background:#28c840"></div>
+          </div>
+          <div class="mockup-url">app.pelakguard.ai</div>
+        </div>
+        <div class="mockup-body">
+          <!-- Input panel -->
+          <div class="mockup-panel">
+            <div class="panel-header">
+              <span class="panel-label" data-fa="تصویر ورودی" data-en="Input Image">تصویر ورودی</span>
+              <span class="panel-tag tag-input" data-fa="خام" data-en="Raw">خام</span>
+            </div>
+            <div class="mockup-img">
+              <svg class="car-svg" viewBox="0 0 400 225" fill="none">
+                <rect width="400" height="225" fill="rgba(15,20,40,0.8)"/>
+                <!-- Road -->
+                <rect y="160" width="400" height="65" fill="rgba(20,25,45,1)"/>
+                <rect x="150" y="170" width="100" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+                <!-- Car body -->
+                <path d="M80 130 L100 85 L160 68 L240 68 L300 85 L320 130 L330 145 L330 165 L70 165 L70 145 Z" fill="#1e2540"/>
+                <path d="M80 130 L100 85 L160 68 L240 68 L300 85 L320 130 Z" fill="#252d52"/>
+                <!-- Windows -->
+                <path d="M110 82 L130 74 L170 74 L170 105 L110 105 Z" fill="rgba(100,150,255,0.25)" rx="2"/>
+                <path d="M290 82 L270 74 L230 74 L230 105 L290 105 Z" fill="rgba(100,150,255,0.25)" rx="2"/>
+                <rect x="174" y="74" width="52" height="31" rx="2" fill="rgba(100,150,255,0.2)"/>
+                <!-- Wheels -->
+                <circle cx="130" cy="165" r="28" fill="#111520"/>
+                <circle cx="130" cy="165" r="18" fill="#1a2035"/>
+                <circle cx="130" cy="165" r="8" fill="#252d52"/>
+                <circle cx="270" cy="165" r="28" fill="#111520"/>
+                <circle cx="270" cy="165" r="18" fill="#1a2035"/>
+                <circle cx="270" cy="165" r="8" fill="#252d52"/>
+                <!-- Lights -->
+                <rect x="75" y="128" width="18" height="10" rx="3" fill="rgba(255,220,80,0.7)"/>
+                <rect x="307" y="128" width="18" height="10" rx="3" fill="rgba(255,80,80,0.5)"/>
+                <!-- Headlight glow -->
+                <ellipse cx="76" cy="133" rx="20" ry="10" fill="rgba(255,220,80,0.06)"/>
+              </svg>
+              <div class="scan-line"></div>
+              <!-- Plate box -->
+              <div class="plate-box">
+                <span class="plate-text">۱۲ب ۳۴۵</span>
+              </div>
+            </div>
+            <div class="mockup-info">
+              <div class="info-chip"><div class="chip-dot" style="background:#3b82f6"></div><span data-fa="در حال پردازش" data-en="Processing">در حال پردازش</span></div>
+              <div class="info-chip"><div class="chip-dot" style="background:#8b5cf6"></div><span>Gemini AI</span></div>
+            </div>
+          </div>
+          <!-- Output panel -->
+          <div class="mockup-panel" style="border-right:none;border-left:1px solid var(--border);">
+            <div class="panel-header">
+              <span class="panel-label" data-fa="تصویر خروجی" data-en="Output Image">تصویر خروجی</span>
+              <span class="panel-tag tag-done" data-fa="ماسک شد ✓" data-en="Masked ✓">ماسک شد ✓</span>
+            </div>
+            <div class="mockup-img">
+              <svg class="car-svg" viewBox="0 0 400 225" fill="none">
+                <rect width="400" height="225" fill="rgba(15,20,40,0.8)"/>
+                <rect y="160" width="400" height="65" fill="rgba(20,25,45,1)"/>
+                <rect x="150" y="170" width="100" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+                <path d="M80 130 L100 85 L160 68 L240 68 L300 85 L320 130 L330 145 L330 165 L70 165 L70 145 Z" fill="#1e2540"/>
+                <path d="M80 130 L100 85 L160 68 L240 68 L300 85 L320 130 Z" fill="#252d52"/>
+                <path d="M110 82 L130 74 L170 74 L170 105 L110 105 Z" fill="rgba(100,150,255,0.25)"/>
+                <path d="M290 82 L270 74 L230 74 L230 105 L290 105 Z" fill="rgba(100,150,255,0.25)"/>
+                <rect x="174" y="74" width="52" height="31" rx="2" fill="rgba(100,150,255,0.2)"/>
+                <circle cx="130" cy="165" r="28" fill="#111520"/>
+                <circle cx="130" cy="165" r="18" fill="#1a2035"/>
+                <circle cx="130" cy="165" r="8" fill="#252d52"/>
+                <circle cx="270" cy="165" r="28" fill="#111520"/>
+                <circle cx="270" cy="165" r="18" fill="#1a2035"/>
+                <circle cx="270" cy="165" r="8" fill="#252d52"/>
+                <rect x="75" y="128" width="18" height="10" rx="3" fill="rgba(255,220,80,0.7)"/>
+                <rect x="307" y="128" width="18" height="10" rx="3" fill="rgba(255,80,80,0.5)"/>
+                <ellipse cx="76" cy="133" rx="20" ry="10" fill="rgba(255,220,80,0.06)"/>
+              </svg>
+              <!-- Masked plate -->
+              <div class="plate-box plate-masked" style="box-shadow:0 0 12px rgba(16,185,129,0.3);border-color:rgba(16,185,129,0.3);">
+                <div class="mask-bars">
+                  <div class="mask-bar" style="width:14px"></div>
+                  <div class="mask-bar" style="width:10px"></div>
+                  <div class="mask-bar" style="width:18px"></div>
+                  <div class="mask-bar" style="width:10px"></div>
+                  <div class="mask-bar" style="width:14px"></div>
+                </div>
+              </div>
+            </div>
+            <div class="mockup-info">
+              <div class="info-chip"><div class="chip-dot" style="background:#10b981"></div><span data-fa="۱ پلاک یافت شد" data-en="1 plate found">۱ پلاک یافت شد</span></div>
+              <div class="info-chip"><span data-fa="۰.۳ ثانیه" data-en="0.3s">۰.۳ ثانیه</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MARQUEE ── -->
+<div class="section-divider"></div>
+<div class="marquee-wrap">
+  <div class="marquee-track" id="marquee"></div>
+</div>
+<div class="section-divider"></div>
+
+<!-- ── HOW IT WORKS ── -->
+<section id="how">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:0;">
+      <div class="section-tag" data-fa="فرآیند" data-en="PROCESS">فرآیند</div>
+      <h2 data-fa="چطور کار می‌کند؟" data-en="How Does It Work?">چطور کار می‌کند؟</h2>
+      <p class="section-sub" data-fa="سه گام ساده تا ماسک کامل پلاک‌ها" data-en="Three simple steps to fully masked plates">سه گام ساده تا ماسک کامل پلاک‌ها</p>
+    </div>
+    <div class="steps fade-in">
+      <div class="step">
+        <span class="step-num">01</span>
+        <div class="step-icon blue-bg">📤</div>
+        <h3 data-fa="آپلود تصویر" data-en="Upload Image">آپلود تصویر</h3>
+        <p data-fa="تصویر یا ویدیوی خود را آپلود کنید. پشتیبانی از JPG، PNG، WebP و MP4." data-en="Upload your image or video. Supports JPG, PNG, WebP, and MP4.">تصویر یا ویدیوی خود را آپلود کنید. پشتیبانی از JPG، PNG، WebP و MP4.</p>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <div class="step-icon purple-bg">🤖</div>
+        <h3 data-fa="پردازش هوش مصنوعی" data-en="AI Detection">پردازش هوش مصنوعی</h3>
+        <p data-fa="موتور AI پلاک‌ها را در زیر یک ثانیه شناسایی می‌کند. دقت بالا حتی در زوایای غیرمستقیم." data-en="The AI engine detects plates in under one second with high accuracy even at indirect angles.">موتور AI پلاک‌ها را در زیر یک ثانیه شناسایی می‌کند. دقت بالا حتی در زوایای غیرمستقیم.</p>
+        <div class="step-connector"></div>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <div class="step-icon green-bg">✅</div>
+        <h3 data-fa="دانلود نتیجه" data-en="Download Result">دانلود نتیجه</h3>
+        <p data-fa="تصویر ماسک‌شده را دانلود کنید. پلاک‌ها به‌طور کامل پنهان و پیکسل‌های اطراف دست‌نخورده." data-en="Download the masked image with all plates fully hidden and surrounding pixels untouched.">تصویر ماسک‌شده را دانلود کنید. پلاک‌ها به‌طور کامل پنهان و پیکسل‌های اطراف دست‌نخورده.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ── FEATURES ── -->
+<section id="features">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-tag" data-fa="قابلیت‌ها" data-en="CAPABILITIES">قابلیت‌ها</div>
+      <h2 data-fa="ویژگی‌های کلیدی" data-en="Key Features">ویژگی‌های کلیدی</h2>
+      <p class="section-sub" data-fa="همه چیزی که برای ماسک حرفه‌ای پلاک نیاز دارید" data-en="Everything you need for professional plate masking">همه چیزی که برای ماسک حرفه‌ای پلاک نیاز دارید</p>
+    </div>
+    <div class="features-grid fade-in">
+      <div class="feature-card">
+        <div class="feature-icon blue-bg">🎯</div>
+        <h3 data-fa="دقت ۹۸٪" data-en="98% Accuracy">دقت ۹۸٪</h3>
+        <p data-fa="حتی در نور ضعیف، زوایای عجیب و کیفیت پایین تصویر." data-en="Even in low light, oblique angles, and low-image quality.">حتی در نور ضعیف، زوایای عجیب و کیفیت پایین تصویر.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon purple-bg">⚡</div>
+        <h3 data-fa="پردازش فوری" data-en="Instant Processing">پردازش فوری</h3>
+        <p data-fa="هر تصویر در کمتر از یک ثانیه. مناسب برای پردازش دسته‌ای حجیم." data-en="Each image in under a second. Ready for large batch processing.">هر تصویر در کمتر از یک ثانیه. مناسب برای پردازش دسته‌ای حجیم.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" style="background:rgba(239,68,68,0.1);">🇮🇷</div>
+        <h3 data-fa="پلاک ایرانی" data-en="Iranian Plates">پلاک ایرانی</h3>
+        <p data-fa="بهینه برای تمام فرمت‌های پلاک ایرانی شامل پلاک موتور، تاکسی و ناوگان دولتی." data-en="Optimized for all Iranian plate formats including motorcycle, taxi, and government fleets.">بهینه برای تمام فرمت‌های پلاک ایرانی شامل پلاک موتور، تاکسی و ناوگان دولتی.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon cyan-bg">🔒</div>
+        <h3 data-fa="پردازش آفلاین" data-en="Offline Mode">پردازش آفلاین</h3>
+        <p data-fa="با ONNX کاملاً روی دستگاه پردازش کنید. داده‌هایتان هرگز سرور را لمس نمی‌کنند." data-en="Fully on-device with ONNX. Your data never touches a server.">با ONNX کاملاً روی دستگاه پردازش کنید. داده‌هایتان هرگز سرور را لمس نمی‌کنند.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon orange-bg">✏️</div>
+        <h3 data-fa="ویرایش دستی" data-en="Manual Editing">ویرایش دستی</h3>
+        <p data-fa="کادرهای تشخیص تعاملی — اضافه، جابجا، تغییر اندازه یا حذف." data-en="Interactive detection boxes — add, move, resize, or delete freely.">کادرهای تشخیص تعاملی — اضافه، جابجا، تغییر اندازه یا حذف.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon pink-bg">🔌</div>
+        <h3 data-fa="REST API" data-en="REST API">REST API</h3>
+        <p data-fa="مستندات کامل و SDK برای Python و JavaScript. ادغام آسان در سیستم‌های موجود." data-en="Full documentation and SDKs for Python and JavaScript. Easy integration into existing systems.">مستندات کامل و SDK برای Python و JavaScript. ادغام آسان در سیستم‌های موجود.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ── USE CASES ── -->
+<section id="usecases">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-tag" data-fa="کاربردها" data-en="USE CASES">کاربردها</div>
+      <h2 data-fa="چه کسانی استفاده می‌کنند؟" data-en="Who Uses PelakGuard?">چه کسانی استفاده می‌کنند؟</h2>
+      <p class="section-sub" data-fa="از ناوگان تا دوربین‌های شهری" data-en="From fleets to city surveillance">از ناوگان تا دوربین‌های شهری</p>
+    </div>
+    <div class="usecases-grid fade-in">
+      <div class="usecase-card">
+        <div class="usecase-icon blue-bg">🚗</div>
+        <div>
+          <h3 data-fa="ناوگان حمل‌ونقل" data-en="Fleet Management">ناوگان حمل‌ونقل</h3>
+          <p data-fa="قبل از انتشار تصاویر ناوگان، پلاک‌ها را ماسک کنید. رعایت قوانین حریم خصوصی اجباری." data-en="Mask plates before publishing fleet images. Privacy law compliance made easy.">قبل از انتشار تصاویر ناوگان، پلاک‌ها را ماسک کنید. رعایت قوانین حریم خصوصی اجباری.</p>
+        </div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon purple-bg">📹</div>
+        <div>
+          <h3 data-fa="دوربین‌های ترافیکی" data-en="Traffic Cameras">دوربین‌های ترافیکی</h3>
+          <p data-fa="برای سازمان‌های شهری که فوتیج ترافیکی را عمومی می‌کنند. پردازش دسته‌ای سریع." data-en="For city organizations publishing traffic footage. Fast batch processing.">برای سازمان‌های شهری که فوتیج ترافیکی را عمومی می‌کنند. پردازش دسته‌ای سریع.</p>
+        </div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon green-bg">🏢</div>
+        <div>
+          <h3 data-fa="پارکینگ و مجتمع‌ها" data-en="Parking & Complexes">پارکینگ و مجتمع‌ها</h3>
+          <p data-fa="آرشیو تصاویر ورودی/خروجی پارکینگ بدون نگرانی از نشت اطلاعات پلاک." data-en="Archive parking entry/exit images without plate data privacy concerns.">آرشیو تصاویر ورودی/خروجی پارکینگ بدون نگرانی از نشت اطلاعات پلاک.</p>
+        </div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon" style="background:rgba(245,158,11,0.1);">👨‍💻</div>
+        <div>
+          <h3 data-fa="توسعه‌دهندگان" data-en="Developers">توسعه‌دهندگان</h3>
+          <p data-fa="API کامل REST برای ادغام در اپ‌ها، پایپ‌لاین‌های ML یا سیستم‌های موجود." data-en="Full REST API to embed into apps, ML pipelines, or existing systems.">API کامل REST برای ادغام در اپ‌ها، پایپ‌لاین‌های ML یا سیستم‌های موجود.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="container" style="max-width:720px;">
+    <div style="text-align:center">
+      <div class="section-tag" data-fa="سوالات" data-en="FAQ">سوالات</div>
+      <h2 data-fa="سوالات متداول" data-en="Frequently Asked Questions">سوالات متداول</h2>
+    </div>
+    <div class="faq-list fade-in" id="faq-container"></div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ── CTA ── -->
+<section id="cta">
+  <div class="container" style="max-width:800px;">
+    <div class="cta-box fade-in">
+      <div class="cta-glow-1"></div>
+      <div style="position:relative;">
+        <div class="cta-icon">🛡️</div>
+        <h2 data-fa="همین الان شروع کنید" data-en="Start Protecting Privacy Today">همین الان شروع کنید</h2>
+        <p data-fa="رایگان امتحان کنید. نیازی به اطلاعات کارت بانکی نیست." data-en="Try it free. No credit card required.">رایگان امتحان کنید. نیازی به اطلاعات کارت بانکی نیست.</p>
+        <div class="cta-btns">
+          <a href="#" class="btn-primary-lg">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <span data-fa="شروع رایگان" data-en="Get Started Free">شروع رایگان</span>
+          </a>
+          <a href="mailto:hello@pelakguard.ai" class="btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span data-fa="تماس با ما" data-en="Contact Us">تماس با ما</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#" class="logo" style="text-decoration:none;">
+        <div class="logo-icon" style="width:28px;height:28px;border-radius:9px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+        </div>
+        <span style="font-weight:700;font-size:14px;">PelakGuard AI</span>
+      </a>
+      <p style="font-size:12.5px;color:var(--muted);" data-fa="© ۲۰۲۵ PelakGuard. تمام حقوق محفوظ است." data-en="© 2025 PelakGuard. All rights reserved.">© ۲۰۲۵ PelakGuard. تمام حقوق محفوظ است.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/src/main.js"></script>
+</body>
+</html>
